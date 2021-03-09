@@ -24,7 +24,7 @@ bash tinyimagenet_download.sh
 
 Our pretrained models can be downloaded [here](https://files.sri.inf.ethz.ch/ace/trained_models.zip).
 
-##Evaluating ACE-Models
+## Evaluating ACE-Models
 ACE-Models can be evaluated jointly using the `evaluate_ACE` script or the core-network can be evaluated separately from the other and the results combined the results using  the `aggreagte_ACE` script.
 
 Ensure in both cases that the right relaxation type is selected. For COLT trained models use `--cert-domain zono` and for IBP trained models use `--cert-domain box`.
@@ -77,9 +77,10 @@ This leads to the follwoing steps to train an ACE-Model from scratch:
  Setting `--gate-feature-extraction 1` will only retrain the last layer of the selection network.
  
  ### Provable Training Type
- To train using COLT set `--train-mode train-COLT`. 
- For IBP training set `--train-mode train-diffAI --train-domain box`.
- 
+ To train using COLT set `--train-mode train-COLT`.\
+ For IBP training set `--train-mode train-diffAI --train-domain box`.\
+ For different CROWN variation use `--train-mode train-diffAI` und see below for the supported domains.
+
  #### COLT
  COLT offers quite a few options to be set, specifying the exact behaviour over the different, attacked latent-spaces.
  The most important ones are listed below. A full list can be found in `args_factory.py` including short descriptions.
@@ -93,6 +94,10 @@ This leads to the follwoing steps to train an ACE-Model from scratch:
  * `--nat-factor` (equivalent to \kappa_{end}), defining the weight of natural and robust loss.
  * `--mix` and `--mix-epochs` which effectively define a nat-factor annealing schedule from 1 to the specified value
  * `--anneal` and `--anneal-epochs` defining an \epsilon annealing
+
+ #### Auto LiRPA
+ The IBP, CROWN, and CROWN-IBP can be accessed using `--train-domain {l_IBP, l_CROWN, l_CROWN-IBP}` without loss-fusion or `{lf_IBP, lf_CROWN, lf_CROWN-IBP}` 
+ with loss-fusion. For more details on Auto LiRPA see [Automatic Perturbation Analysis for Scalable Certified Robustness and Beyond](https://arxiv.org/pdf/2002.12920).
 
 ## Publications
 * [Certify or Predict: Boosting Certified Robustness with Compositional Architectures](https://openreview.net/pdf?id=USCNapootw) \
