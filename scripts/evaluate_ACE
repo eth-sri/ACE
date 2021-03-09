@@ -1,0 +1,16 @@
+#!/bin/bash
+
+python /home/mark/Projects/ACE/pruning/code/deepTrunk_main.py \
+    --train-mode cert \
+    --dataset cifar10 \
+    --net efficientnet-b0_pre \
+    --branch-nets C5_cifar10 \
+    --gate-nets C5_cifar10 \
+    --load-trunk-model ./trained_models/EB-0_cifar10_adv_8_255.pt \
+    --load-model ./trained_models/C5_ACE_Net_IBP_cert_cifar10_8_255.pt \
+    --n-branches 1 --gate-type net --gate-threshold -0.0 \
+    --exp-id 4 \
+    --train-batch 20 --test-batch 20 \
+    --train-eps 0.03137254901 --test-att-n-steps 40 --test-att-step-size 0.035 \
+    --test-set test \
+    --cert-domain box --cert-trunk False

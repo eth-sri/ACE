@@ -1,0 +1,10 @@
+python main.py \
+    --train-mode train-natural \
+    --dataset cifar10 \
+    --exp-id 1 \
+    --net C3_cifar10 \
+    --train-batch 100 --test-batch 100 \
+    --opt adam --lr 1.e-3 --lr-step 20 --lr-factor 0.5 --lr-layer-dec 0.75 \
+    --n-epochs 150 \
+    --test-freq 50 \
+    --l1-reg 1e-5 \

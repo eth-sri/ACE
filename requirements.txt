@@ -1,0 +1,14 @@
+efficientnet_pytorch
+future
+forbiddenfruit
+numpy
+pillow==6.2.1
+robustness
+six
+tabulate
+tables
+torch==1.6.0
+torchvision
+tqdm
+tensorboard
+

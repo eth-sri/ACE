@@ -1,0 +1,23 @@
+python deepTrunk_main.py \
+  --train-mode train-diffAI \
+  --dataset timagenet \
+  --exp-id 4  \
+  --n-branches 1 --gate-type net --gate-mode gate_init \
+  --net None \
+  --branch-nets WRN_timagenet \
+  --gate-nets WRN_timagenet \
+  --load-branch-model ./trained_models/WRN_timagenet_crown-ibp_1_255.pt \
+  --load-gate-model ./trained_models/WRN_timagenet_crown-ibp_1_255.pt \
+  --gate-feature-extraction 1 \
+  --train-batch 32 --test-batch 32  \
+  --train-eps 0.00392156862 --start-eps-factor 1.05 \
+  --train-att-n-steps 8 --train-att-step-size 0.25 --test-att-n-steps 40 --test-att-step-size 0.035  \
+  --opt adam --lr 1e-4 --lr-step 3 --lr-factor 0.5  \
+  --mix --mix-epochs 5 --anneal --anneal-epochs 5 --n-epochs 20 \
+  --test-freq 5 --test-set test  \
+  --l1-reg 1e-5 --train-domain box --nat-factor 0.5 \
+  --train-trunk False --gate-on-trunk False \
+  --retrain-branch False \
+  --balanced-gate-loss --sliding-loss-balance 0.2 \
+  --cert --cert-domain box \
+

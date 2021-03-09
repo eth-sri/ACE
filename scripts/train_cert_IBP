@@ -1,0 +1,13 @@
+python main.py \
+    --train-mode train-diffAI \
+    --dataset cifar10 \
+    --exp-id 1 \
+    --net C3_cifar10 \
+    --train-batch 100 --test-batch 100 \
+    --train-eps 0.00784313725 --start-eps-factor 1.05 \
+    --train-att-n-steps 8 --train-att-step-size 0.25 --test-att-n-steps 40 --test-att-step-size 0.035 \
+    --opt adam --lr 1.e-3 --lr-step 10 --lr-factor 0.5 \
+    --mix --mix-epochs 100 --anneal --anneal-epochs 100 --n-epochs 200 \
+    --test-freq 40 \
+    --l1-reg 1e-5 --train-domain box --nat-factor 0.5 \
+    --cert --cert-domain box \

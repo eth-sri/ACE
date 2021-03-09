@@ -1,0 +1,3 @@
+python aggregate_results.py \
+    --core-file <path>/test_log.csv \
+    --certification-file <path>/cert_log.csv
