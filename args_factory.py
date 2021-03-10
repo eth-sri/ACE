@@ -23,9 +23,9 @@ def translate_net_name(net_name):
                 new_net_name = "myNet__4_4_8_8_8__3__1_1_2_1_1__1__0__512"
         elif "cifar" in dataset:
             if conv_id == 2:
-                new_net_name = "myNet__2_2__4__2__0__200"
+                new_net_name = "myNet__2_2__4__2__1__0__200"
             elif conv_id == 3:
-                new_net_name = "convmedbig_flat_2_2_4_250"
+                new_net_name = "myNet__2_2_8__3_4_4__1_2_2__1__0__250"
             elif conv_id == 5:
                 new_net_name = "myNet__4_4_8_8_8__3__1_1_2_1_1__1__0__512"
     elif match_W is not None:
