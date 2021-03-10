@@ -14,8 +14,6 @@ cd auto_LiRPA
 python setup.py install
 ```
 
-To evaluate our trained models please also download the "ACE_models.zip" and unpack it in the top level directory.
-
 To conduct any training or evaluation of ImageNet set `IMAGENET_DIR` in `loaders.py`to your local ImageNet directory.
 To download the TinyImageNet datastet navigate to your local ImageNet folder specified in `loaders.py` and run the `tinyimagenet_download` located in `data`:
 ```
