@@ -6,7 +6,7 @@ Create a new virtualenv with python 3.8 and install the requirements by running
 git clone https://github.com/eth-sri/ACE
 cd ACE
 virtualenv --python /usr/bin/python3.8 env_ace
-source ./ace_env/bin/activate
+source ./env_ace/bin/activate
 pip install -r requirements.txt
 cd ..
 git clone https://github.com/KaidiXu/auto_LiRPA
